@@ -1,3 +1,3 @@
 class Location < ActiveRecord::Base
-  has_many :happy_hour, through :user
+  has_many :happy_hours, through: :users
 end
