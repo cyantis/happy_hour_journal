@@ -9,15 +9,15 @@ class HappyHoursController < ApplicationController
    end
  end
 
- post '/tweets' do
-    if params[:happy_hour][:location].empty? || params[:happy_hour][:date].empty?
+ post '/happy_hours' do
+    if params[:happy_hour][:date].empty?
       redirect '/happy_hours/new'
     else
       user = current_user
       hh = HappyHour.create(params[:happy_hour])
       user.happy_hours << hh
-      #location = hh.location_id
-      #location.happy_hours << hh
+      location = Location.find_or_create_by(name: hh.name)
+      location.happy_hours << hh
       redirect "/happy_hours/#{user.happy_hours.last.id}"
     end
   end
@@ -31,7 +31,7 @@ class HappyHoursController < ApplicationController
   end
 
   patch '/happy_hours/:id/edit' do
-    redirect "/happy_hours/#{params[:id]}/edit" if params[:happy_hour][:location].empty? || params[:happy_hour][:date].empty?
+    redirect "/happy_hours/#{params[:id]}/edit" if params[:happy_hour][:date].empty?
     hh = HappyHour.find(params[:id])
     hh.update(params[:happy_hour])
     redirect "/happy_hours/#{happy_hour.id}"
