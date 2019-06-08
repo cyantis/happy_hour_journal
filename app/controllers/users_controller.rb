@@ -25,4 +25,22 @@ class UsersController < ApplicationController
       erb :'/users/login'
     end
   end
+
+  post '/login' do
+    if !params[:username].empty? && !params[:password].empty?
+      user = User.find_by(username: params[:username])
+      if user
+        if user.authenticate(params[:password])
+          session[:user_id] = user.id
+          redirect '/happy_hours'
+        end
+      end
+    end
+    redirect '/login'
+  end
+
+  get '/users/:id' do
+    @user = User.find(params[:id])
+    erb :'/users/show'
+  end
 end
