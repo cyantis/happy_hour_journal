@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   get '/signup' do
-    erb :'/users/create_user'
     if !logged_in?
       erb :'/users/create_user'
     else
@@ -40,8 +39,14 @@ class UsersController < ApplicationController
     redirect '/login'
   end
 
+  get '/logout' do
+    session.clear
+    redirect '/login'
+  end
+
   get '/users/:id' do
     @user = User.find(params[:id])
     erb :'/users/show'
   end
+
 end
