@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_183446) do
+ActiveRecord::Schema.define(version: 2019_06_09_235542) do
 
   create_table "happy_hours", force: :cascade do |t|
     t.string "date"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_183446) do
     t.float "rating"
     t.integer "user_id"
     t.integer "location_id"
+    t.string "locale"
   end
 
   create_table "locations", force: :cascade do |t|

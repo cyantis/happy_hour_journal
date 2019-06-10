@@ -2,6 +2,7 @@ class HappyHoursController < ApplicationController
 
   get '/happy_hours' do
    if logged_in?
+     @user = current_user
      @hh = HappyHour.all
      erb :'/happy_hours/happy_hours'
    else
@@ -10,13 +11,13 @@ class HappyHoursController < ApplicationController
  end
 
  post '/happy_hours' do
-    if params[:happy_hour][:date].empty?
+    if params[:date].empty? || params[:locale].empty?
       redirect '/happy_hours/new'
     else
       user = current_user
-      hh = HappyHour.create(params[:happy_hour])
+      hh = HappyHour.create(params)
       user.happy_hours << hh
-      location = Location.find_or_create_by(name: hh.name)
+      location = Location.find_or_create_by(name: hh.locale.downcase)
       location.happy_hours << hh
       redirect "/happy_hours/#{user.happy_hours.last.id}"
     end
