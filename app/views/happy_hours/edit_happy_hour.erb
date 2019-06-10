@@ -1,1 +1,31 @@
-<p>Edit a Happy Hour Here.</p>
+<h2><%= @hh.locale %>, <%= @hh.date %></h2>
+<form action="/happy_hours/<%=@hh.id%>/edit" method="POST">
+  <input type="hidden" id="hidden" value="patch" name="_method">
+  <p><label for="locale">Where'd you go?:</label>
+  <input type="text" name="hh[locale]" placeholder="<%= @hh.locale %>"></p>
+  <p><label for="date">When'd you go?:</label>
+  <input type="text" name="hh[date]" placeholder="<%= @hh.date %>"></p>
+  <p><label for="food">What'd you eat?:</label>
+  <input type="text" name="hh[food]" placeholder="<%= @hh.food %>"></p>
+  <p><label for="drink">What'd you drink?:</label>
+  <input type="text" name="hh[drink]" placeholder="<%= @hh.drink %>"></p>
+  <p><label for="friends">Who'd you eat with?:</label>
+  <input type="text" name="hh[friends]" placeholder="<%= @hh.friends %>"></p>
+  <p><label for="rating">Rating, 1-5:</label>
+  <input type="text" name="hh[rating]" placeholder="<%= @hh.rating %>"></p>
+  <input type="submit" value="Change it!">
+</form>
+
+<form action="/happy_hours/<%= @hh.id %>">
+    <input type="submit" value="Cancel"/>
+</form>
+<form action="/happy_hours/<%= @hh.id %>/delete" method="POST">
+  <input type="hidden" id="hidden" value="delete" name="_method">
+    <input type="submit" value="Delete"/>
+</form>
+<form action="/happy_hours/new">
+    <input type="submit" value="Log a New Journal Entry"/>
+</form>
+<form action="/logout">
+    <input type="submit" value="Logout"/>
+</form>

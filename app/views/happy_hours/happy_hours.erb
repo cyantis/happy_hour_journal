@@ -8,9 +8,9 @@
 <% @user.happy_hours.reverse_each do |h| %>
   <h2><a href="/happy_hours/<%= h.id %>"><%= h.locale %>, <%= h.date %></a></h2>
   <ul>
-    <li>Food:<%= h.food %></li>
-    <li>Drink:<%= h.drink %></li>
-    <li>Friends:<%= h.friends %></li>
-    <li>Rating:<%= h.rating %></li>
+    <li>Food: <%= h.food %></li>
+    <li>Drink: <%= h.drink %></li>
+    <li>Friends: <%= h.friends %></li>
+    <li>Rating: <%= h.rating %></li>
   </ul>
 <% end %>

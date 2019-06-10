@@ -1,10 +1,25 @@
-User's happy hour list
--do something with show page?
-Happy Hour edit
-Happy Hour delete
+##Essentials
 
-Locale build out
--Drop down menu?
--Edit / Delete
+###Happy Hours
+* Happy Hour edit
+  - Persiting old data, so that users don't have to reenter each field?
 
-Style
+###Style
+
+###Random
+- do something with show page?
+
+###README
+- Basic description
+- Usage?
+
+##Bonus
+
+###Locale build out
+- Drop down menu?
+- Edit / Delete
+
+###User Profile page
+- Edit Info
+- Photo
+- Is this the show page?

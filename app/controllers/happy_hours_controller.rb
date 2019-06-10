@@ -31,23 +31,6 @@ class HappyHoursController < ApplicationController
     end
   end
 
-  patch '/happy_hours/:id/edit' do
-    redirect "/happy_hours/#{params[:id]}/edit" if params[:happy_hour][:date].empty?
-    hh = HappyHour.find(params[:id])
-    hh.update(params[:happy_hour])
-    redirect "/happy_hours/#{happy_hour.id}"
-  end
-
-  delete '/happy_hours/:id/delete' do
-    redirect '/happy_hours' if !logged_in?
-    @hh = HappyHour.find(params[:id])
-    if current_user.happy_hours.include?(@hh)
-      HappyHour.find(params[:id]).destroy
-      erb :'/happy_hour/edit_happy_hour'
-    end
-      redirect '/happy_hours'
-  end
-
   get '/happy_hours/:id/edit' do
     redirect '/login' if !logged_in?
     @hh = HappyHour.find(params[:id])
@@ -56,6 +39,25 @@ class HappyHoursController < ApplicationController
     else
       redirect '/happy_hours'
     end
+  end
+
+  patch '/happy_hours/:id/edit' do
+    if params[:hh][:date].empty? || params[:hh][:locale].empty?
+      redirect "/happy_hours/#{params[:id]}/edit"
+    end
+    @hh = HappyHour.find(params[:id])
+    @hh.update(params[:hh])
+    redirect "/happy_hours/#{@hh.id}"
+  end
+
+  delete '/happy_hours/:id/delete' do
+    redirect '/happy_hours' if !logged_in?
+    @hh = HappyHour.find(params[:id])
+    if current_user.happy_hours.include?(@hh)
+      HappyHour.find(params[:id]).destroy
+      redirect '/happy_hours'
+    end
+      redirect '/happy_hours'
   end
 
   get '/happy_hours/:id' do
