@@ -4,7 +4,7 @@ class HappyHoursController < ApplicationController
    if logged_in?
      @user = current_user
      @hh = HappyHour.all
-     erb :'/happy_hours/happy_hours'
+     erb :'/users/show'
    else
      redirect to '/login'
    end
@@ -42,11 +42,12 @@ class HappyHoursController < ApplicationController
   end
 
   patch '/happy_hours/:id/edit' do
-    if params[:hh][:date].empty? || params[:hh][:locale].empty?
-      redirect "/happy_hours/#{params[:id]}/edit"
-    end
     @hh = HappyHour.find(params[:id])
-    @hh.update(params[:hh])
+      params[:hh].each do |k, v|
+        if !v.empty?
+          @hh.update(k => v)
+        end
+      end
     redirect "/happy_hours/#{@hh.id}"
   end
 
