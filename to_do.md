@@ -11,10 +11,6 @@
 
 ##Bonus
 
-###Locale build out
-- Drop down menu?
-- Edit / Delete
-
 ###User Profile page
 - Edit Info
 - Photo
