@@ -25,6 +25,7 @@ class HappyHoursController < ApplicationController
 
   get '/happy_hours/new' do
     if logged_in?
+      @user = current_user
       erb :'/happy_hours/new'
     else
       redirect '/login'
@@ -33,6 +34,7 @@ class HappyHoursController < ApplicationController
 
   get '/happy_hours/:id/edit' do
     redirect '/login' if !logged_in?
+    @user = current_user
     @hh = HappyHour.find(params[:id])
     if current_user.happy_hours.include?(@hh)
       erb :'/happy_hours/edit_happy_hour'

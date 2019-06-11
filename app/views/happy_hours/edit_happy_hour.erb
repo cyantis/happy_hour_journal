@@ -2,7 +2,12 @@
 <form action="/happy_hours/<%=@hh.id%>/edit" method="POST">
   <input type="hidden" id="hidden" value="patch" name="_method">
   <p><label for="locale">Where'd you go?:</label>
-  <input type="text" name="hh[locale]" placeholder="<%= @hh.locale %>"></p>
+  <input list="locales" name="hh[locale]" placeholder="<%= @hh.locale %>"></p>
+    <datalist id="hh[locale]">
+      <% @user.happy_hours.each do |l| %>
+        <option value="<%= l.locale %>"><%= l.locale %></option>
+        <% end %>
+      </datalist></p>
   <p><label for="date">When'd you go?:</label>
   <input type="text" name="hh[date]" placeholder="<%= @hh.date %>"></p>
   <p><label for="food">What'd you eat?:</label>

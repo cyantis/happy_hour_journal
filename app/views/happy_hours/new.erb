@@ -1,7 +1,12 @@
 <h1>Log a New Happy Hour!</h1>
 <form action="/happy_hours" method="post">
   <p><label for="locale">Where'd you go?:</label>
-  <input type="text" name="locale"></p>
+    <input list="locales" name="locale">
+    <datalist id="locales">
+      <% @user.happy_hours.each do |l| %>
+        <option value="<%= l.locale %>"><%= l.locale %></option>
+      <% end %>
+    </datalist></p>
   <p><label for="date">When'd you go?:</label>
   <input type="text" name="date"></p>
   <p><label for="food">What'd you eat?:</label>

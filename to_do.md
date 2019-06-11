@@ -1,9 +1,5 @@
 ##Essentials
 
-###Happy Hours
-* Happy Hour edit
-  - Persiting old data, so that users don't have to reenter each field?
-
 ###Style
 
 ###Random
@@ -23,3 +19,6 @@
 - Edit Info
 - Photo
 - Is this the show page?
+
+##Blog Points
+-
