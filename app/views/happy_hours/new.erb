@@ -4,7 +4,7 @@
     <input list="locales" name="locale">
     <datalist id="locales">
       <% @user.happy_hours.each do |l| %>
-        <option value="<%= l.locale %>"><%= l.locale %></option>
+        <option value="<%= l.locale.capitalize %>"><%= l.locale.capitalize %></option>
       <% end %>
     </datalist></p>
   <p><label for="date">When'd you go?:</label>

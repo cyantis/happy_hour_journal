@@ -3,9 +3,9 @@
   <input type="hidden" id="hidden" value="patch" name="_method">
   <p><label for="locale">Where'd you go?:</label>
   <input list="locales" name="hh[locale]" placeholder="<%= @hh.locale %>"></p>
-    <datalist id="hh[locale]">
+    <datalist id="locales">
       <% @user.happy_hours.each do |l| %>
-        <option value="<%= l.locale %>"><%= l.locale %></option>
+        <option value="<%= l.locale.capitalize %>"><%= l.locale.capitalize %></option>
         <% end %>
       </datalist></p>
   <p><label for="date">When'd you go?:</label>

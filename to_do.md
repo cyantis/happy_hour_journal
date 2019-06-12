@@ -2,14 +2,14 @@
 
 ###Style
 
-###Random
-- do something with show page?
-
 ###README
 - Basic description
-- Usage?
+- Make sure to create a good README.md with a short description, install instructions, a contributor's guide, and a link to the license for your code.
 
 ##Bonus
+
+###Error Messages
+- Display validation failures to user with error messages. (This is an optional feature, challenge yourself and give it a shot!)
 
 ###User Profile page
 - Edit Info
