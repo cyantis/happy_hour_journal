@@ -17,4 +17,5 @@
 - Is this the show page?
 
 ##Blog Points
--
+- datalist
+- CSS Form styling (especially submit "buttons")

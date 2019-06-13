@@ -1,16 +1,18 @@
-<h1><%= @user.username.capitalize %>'s Happy Hours.</h1>
-<form action="/happy_hours/new">
-    <input type="submit" value="Log a New Journal Entry"/>
+<h1><%= @user.username.capitalize %>'s Happy Hours</h1>
+<p><form action="/happy_hours/new">
+    <input type="submit" value="Log a New Journal Entry" />
 </form>
 <form action="/logout">
-    <input type="submit" value="Logout"/>
-</form>
-<% @user.happy_hours.reverse_each do |h| %>
+    <input type="submit" value="Logout" />
+</form></p>
+<br>
+<p><% @user.happy_hours.reverse_each do |h| %>
   <h2><a href="/happy_hours/<%= h.id %>"><%= h.locale %>, <%= h.date %></a></h2>
   <ul>
-    <li>Food: <%= h.food %></li>
-    <li>Drink: <%= h.drink %></li>
-    <li>Friends: <%= h.friends %></li>
-    <li>Rating: <%= h.rating %></li>
+    <li><strong>Food:</strong> <%= h.food %></li>
+    <li><strong>Drink:</strong> <%= h.drink %></li>
+    <li><strong>Friends:</strong> <%= h.friends %></li>
+    <li><strong>Rating:</strong> <%= h.rating %></li>
   </ul>
-<% end %>
+<% end %></p>
+<br>

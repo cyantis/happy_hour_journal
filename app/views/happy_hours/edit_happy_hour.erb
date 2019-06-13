@@ -18,19 +18,14 @@
   <input type="text" name="hh[friends]" placeholder="<%= @hh.friends %>"></p>
   <p><label for="rating">Rating, 1-5:</label>
   <input type="text" name="hh[rating]" placeholder="<%= @hh.rating %>"></p>
-  <input type="submit" value="Change it!">
-</form>
-
-<form action="/happy_hours/<%= @hh.id %>">
-    <input type="submit" value="Cancel"/>
+  <input type="submit" value="Change it!" >
 </form>
 <form action="/happy_hours/<%= @hh.id %>/delete" method="POST">
   <input type="hidden" id="hidden" value="delete" name="_method">
-    <input type="submit" value="Delete"/>
+    <input type="submit" value="Delete it!" />
 </form>
-<form action="/happy_hours/new">
-    <input type="submit" value="Log a New Journal Entry"/>
+<form action="/happy_hours/<%= @hh.id %>">
+    <input type="submit" value="Cancel" />
 </form>
-<form action="/logout">
-    <input type="submit" value="Logout"/>
-</form>
+<p></p>
+<br>

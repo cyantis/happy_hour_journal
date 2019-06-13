@@ -1,23 +1,25 @@
 <h2><%= @hh.locale %>, <%= @hh.date %></h2>
 <ul>
-  <li>Food: <%= @hh.food %></li>
-  <li>Drink: <%= @hh.drink %></li>
-  <li>Friends: <%= @hh.friends %></li>
-  <li>Rating: <%= @hh.rating %></li>
+  <li><strong>Food:</strong> <%= @hh.food %></li>
+  <li><strong>Drink:</strong> <%= @hh.drink %></li>
+  <li><strong>Friends:</strong> <%= @hh.friends %></li>
+  <li><strong>Rating:</strong> <%= @hh.rating %></li>
 </ul>
 <form action="/happy_hours/<%= @hh.id %>/edit">
-    <input type="submit" value="Edit"/>
+    <input type="submit" value="Edit" />
 </form>
 <form action="/happy_hours/<%= @hh.id %>/delete" method="POST">
   <input type="hidden" id="hidden" value="delete" name="_method">
-    <input type="submit" value="Delete"/>
+    <input type="submit" value="Delete" />
 </form>
 <form action="/happy_hours">
-    <input type="submit" value="Home"/>
+    <input type="submit" value="Home" />
 </form>
 <form action="/happy_hours/new">
-    <input type="submit" value="Log a New Journal Entry"/>
+    <input type="submit" value="Log a New Journal Entry" />
 </form>
 <form action="/logout">
-    <input type="submit" value="Logout"/>
+    <input type="submit" value="Logout" />
 </form>
+<p></p>
+<br>

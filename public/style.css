@@ -1,1 +1,93 @@
+body {
+	font-size: large;
+	font-family: 'Poppins', sans-serif;
+	line-height: 1.5em;
+	width: 80%;
+	max-width: 850px;
+	min-width: 320px;
+	margin: 0 auto;
+	background-image: url("burgers.jpg");
+}
 
+#content {
+	background-color: #b9d9c3;
+	padding: 1em;
+	margin: 0.5em;
+	border-radius: 1em;
+}
+
+h1 {
+	text-align: center;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	padding: 1em 0;
+
+}
+
+h2, h3 {
+	text-align: center;
+	clear: both;
+}
+
+input[type=submit] {
+	float: left;
+	background-color: #eb5e30;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 0.5em;
+	border-radius: 1em;
+	font-family: 'Poppins', sans-serif;
+	font-size: medium;
+	display: block;
+}
+
+input[type=submit]:hover {
+	background-color: #fbcb7b;
+	color: black;
+}
+
+input[type=text] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5em;
+	font-family: 'Poppins', sans-serif;
+	font-size: large;
+}
+
+input[type=password]{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5em;
+	font-family: 'Poppins', sans-serif;
+	font-size: large;
+}
+
+input[name=locale] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5em;
+	font-family: 'Poppins', sans-serif;
+	font-size: large;
+}
+
+input[list=locales] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5em;
+	font-family: 'Poppins', sans-serif;
+	font-size: large;
+}
+
+p {
+  clear: both;
+}
+
+a {
+	color: #eb5e30;
+}
+
+ul {
+	list-style-type: square;
+}
