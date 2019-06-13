@@ -13,6 +13,12 @@ class UsersController < ApplicationController
       @user = User.create(params)
       session[:user_id] = @user.id
       redirect '/happy_hours'
+    elsif !params[:username].empty? && !params[:password].empty? && !params[:email].empty?
+      flash[:message] = "Please enter a username, password, AND email. Thanks!"
+      redirect '/signup'
+    elsif User.find_by(username: params[:username])
+      flash[:message] = "That username is taken. Please choose another. Thanks!"
+      redirect '/signup'
     else
       redirect '/signup'
     end

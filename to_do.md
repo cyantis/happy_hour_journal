@@ -19,3 +19,5 @@
 ##Blog Points
 - datalist
 - CSS Form styling (especially submit "buttons")
+- When styling, clear the cache from time-to-time to make sure your changes are being rendered.
+- Anytime you install a new dependency, don't forget to kill your server session and launch again.

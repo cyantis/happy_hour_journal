@@ -18,6 +18,7 @@
   <input type="text" name="hh[friends]" placeholder="<%= @hh.friends %>"></p>
   <p><label for="rating">Rating, 1-5:</label>
   <input type="text" name="hh[rating]" placeholder="<%= @hh.rating %>"></p>
+  <div class="frmBtn">
   <input type="submit" value="Change it!" >
 </form>
 <form action="/happy_hours/<%= @hh.id %>/delete" method="POST">
@@ -27,5 +28,6 @@
 <form action="/happy_hours/<%= @hh.id %>">
     <input type="submit" value="Cancel" />
 </form>
+</div>
 <p></p>
 <br>

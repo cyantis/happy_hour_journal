@@ -91,3 +91,12 @@ a {
 ul {
 	list-style-type: square;
 }
+
+.frmBtn {
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+}

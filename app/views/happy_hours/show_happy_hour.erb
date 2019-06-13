@@ -5,6 +5,7 @@
   <li><strong>Friends:</strong> <%= @hh.friends %></li>
   <li><strong>Rating:</strong> <%= @hh.rating %></li>
 </ul>
+<div class="frmBtn">
 <form action="/happy_hours/<%= @hh.id %>/edit">
     <input type="submit" value="Edit" />
 </form>
@@ -21,5 +22,6 @@
 <form action="/logout">
     <input type="submit" value="Logout" />
 </form>
+</div>
 <p></p>
 <br>
