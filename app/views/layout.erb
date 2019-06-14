@@ -7,6 +7,13 @@
 </head>
   <body>
     <div id="content">
+      <% %w(username empty).each do |key| %>
+        <% if flash[key] %>
+        <div id="#{key}" class="flash">
+          <%= flash[key] %>
+          </div>
+        <% end %>
+      <% end %>
     <%= yield %>
     </div>
   </body>
