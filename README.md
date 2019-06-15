@@ -29,9 +29,14 @@ Once logged in, a user's previous journal entries will be displayed. From this h
 2. View a previous journal entry by clicking on the journal entry title (__Location, Date__).
 3. End the session by clicking `Logout`.
 
-By visiting a previous journal entry page, the user can `Edit` or `Delete` the entry, as well as return to the home page (`Home`), create a new entry (`Log a New Journal Entry`), or logout (`Logout`).
+By visiting a previous journal entry page, the user can:
 
-Whether creating or editing journal entry, users always have the opporunity to `Cancel` any additions/changes.
+1. `Edit` or `Delete` the entry
+2. Return to the home page (`Home`)
+3. Create a new entry (`Log a New Journal Entry`)
+4. Logout (`Logout`).
+
+Whether creating or editing a journal entry, users always have the opportunity to `Cancel` any additions/changes.
 
 Clicking `Logout` from anywhere in the app ends the user's session.
 
