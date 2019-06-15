@@ -17,7 +17,9 @@
 - Is this the show page?
 
 ##Blog Points
-- datalist
+- datalist (for data control and ease)
+- Edit: Placeholder to see the data and conditional to only update new fields.
 - CSS Form styling (especially submit "buttons")
 - When styling, clear the cache from time-to-time to make sure your changes are being rendered.
 - Anytime you install a new dependency, don't forget to kill your server session and launch again.
+- Rack flash (blog post and iterator for layout)

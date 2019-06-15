@@ -26,4 +26,4 @@ CRUD capabilities are restricted to only those happy hour journal entries a user
 Users must enter a `location` and `date`, at minimum. If these criteria aren't met, their journal is not logged, nor persisted to the database, and they are returned to the new journal entry form. In order to avoid duplicate locations (due to spelling/grammar/etc.), _HHJ_ offers a `datalist` dropdown menu that displays previous locations for easy selection when logging a repeat visit. The data is then controlled for `type` and `case` and makes use of ActiveRecord's `find_or_create_by` method.
 
 10. BONUS: Display validation failures to user with error messages. (This is an optional feature, challenge yourself and give it a shot!)  
-In-progress!
+I installed Rack Flash and employ it to deliver confirmation messages throughout the site.

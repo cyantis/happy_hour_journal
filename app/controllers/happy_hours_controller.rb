@@ -12,6 +12,7 @@ class HappyHoursController < ApplicationController
 
  post '/happy_hours' do
     if params[:date].empty? || params[:locale].empty?
+      flash[:hh_empty] = "Please include at least a location AND date."
       redirect '/happy_hours/new'
     else
       user = current_user
@@ -19,6 +20,7 @@ class HappyHoursController < ApplicationController
       user.happy_hours << hh
       location = Location.find_or_create_by(name: hh.locale.downcase)
       location.happy_hours << hh
+      flash[:hh] = "Happy Hour logged!"
       redirect "/happy_hours/#{user.happy_hours.last.id}"
     end
   end
@@ -50,6 +52,7 @@ class HappyHoursController < ApplicationController
           @hh.update(k => v)
         end
       end
+    flash[:hh_edit] = "Happy Hour updated!"
     redirect "/happy_hours/#{@hh.id}"
   end
 
@@ -58,6 +61,7 @@ class HappyHoursController < ApplicationController
     @hh = HappyHour.find(params[:id])
     if current_user.happy_hours.include?(@hh)
       HappyHour.find(params[:id]).destroy
+      flash[:delete] = "Happy Hour deleted!"
       redirect '/happy_hours'
     end
       redirect '/happy_hours'

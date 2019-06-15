@@ -12,12 +12,13 @@ class UsersController < ApplicationController
     if !params[:username].empty? && !params[:password].empty? && !params[:email].empty? && !logged_in? && !User.find_by(username: params[:username])
       @user = User.create(params)
       session[:user_id] = @user.id
+      flash[:first] = "Welcome, #{@user.username.capitalize}! Let's log some eats and drinks."
       redirect '/happy_hours'
     elsif User.find_by(username: params[:username])
-      flash[:username] = "That username is taken. Please choose another. Thanks!"
+      flash[:username] = "That username is taken. Please choose another."
       redirect '/signup'
     elsif params[:username].empty? || params[:password].empty? || params[:email].empty?
-      flash[:empty] = "Please enter a username, password, AND email. Thanks!"
+      flash[:empty] = "Please enter a username, password, AND email."
       redirect '/signup'
     else
       redirect '/signup'
@@ -33,20 +34,30 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    if !params[:username].empty? && !params[:password].empty?
+    if params[:username].empty? || params[:password].empty?
+      flash[:login] = "Please enter a valid username AND password."
+      redirect '/login'
+    else
       user = User.find_by(username: params[:username])
       if user
         if user.authenticate(params[:password])
           session[:user_id] = user.id
+          flash[:welcome] = "Welcome back! Whatcha been eatin' and drinkin'?"
           redirect '/happy_hours'
+        else
+          flash[:password] = "Password incorrect. Please try again."
+          redirect '/login'
         end
+      else
+        flash[:not_found] = "Username not found. Please try again."
+        redirect '/login'
       end
     end
-    redirect '/login'
   end
 
   get '/logout' do
     session.clear
+    flash[:logged_out] = "You have successfully logged out!"
     redirect '/login'
   end
 
